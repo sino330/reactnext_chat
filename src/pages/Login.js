@@ -1,4 +1,3 @@
-import { FirebaseError } from "@firebase/util";
 import React, { useContext, useState } from "react";
 import { Link,Redirect } from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
@@ -15,6 +14,7 @@ const Login = ({history}) => {
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
         history.push("/");
+        console.log("LogIn")
       })
       .catch((err) => {
         console.log(err);
